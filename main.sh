@@ -15,4 +15,5 @@ curl --cookie cjar --cookie-jar cjar \
 curl --cookie cjar --cookie-jar cjar \
 	--output log/grades.html \
 	"https://nz.ua/schedule/grades-statement"
+dotnet ./nz-grader.win10-x64/console.dll ./log/grades.html
 mv cjar log/cjar

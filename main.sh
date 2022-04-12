@@ -18,7 +18,7 @@ curl --cookie cjar --cookie-jar cjar \
 curl --cookie cjar --cookie-jar cjar \
 	--output log/grades.html \
 	"https://nz.ua/schedule/grades-statement"
-echo `node grader.js ./log/grades.html`
+echo -e `node grader.js ./log/grades.html`
 
 # Clean up
 mv cjar log/cjar

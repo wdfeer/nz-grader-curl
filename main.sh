@@ -4,8 +4,16 @@ npm i jsdom
 curl --cookie-jar cjar \
 	--output log/one.html \
 	"https://nz.ua/"
-login=`cat env/login.txt`
-password=`cat env/password.txt`
+if [ -s "env/login.txt" ] && [ -s "env/password.txt" ]
+then
+	login=`cat env/login.txt`
+	password=`cat env/password.txt`
+else
+	echo "Enter your nz.ua login:"
+	read login
+	echo "Enter your nz.ua password:"
+	read -s password
+fi
 csrf=`node ./csrf-collector.js ./log/one.html`
 curl --cookie cjar --cookie-jar cjar \
 	--output log/two.html \

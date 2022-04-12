@@ -1,3 +1,6 @@
+# Setup
+npm i jsdom
+
 curl --cookie-jar cjar \
 	--output log/one.html \
 	"https://nz.ua/"
@@ -23,7 +26,7 @@ curl --cookie cjar --cookie-jar cjar \
 curl --cookie cjar --cookie-jar cjar \
 	--output log/grades.html \
 	"https://nz.ua/schedule/grades-statement"
-dotnet ./nz-grader.win10-x64/console.dll ./log/grades.html
+echo -e `node grader.js ./log/grades.html`
 
 # Clean up
 mv cjar log/cjar

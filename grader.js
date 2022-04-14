@@ -27,6 +27,7 @@ function getOutput(gradeTable) {
         let grade = grades[i];
         result.push(subject + ': ' + grade);
     }
+    result.push('Total average: ' + average(grades));
     return result;
 }
 function getEveryItemOnTheColumn(tbody, columnIndex) {

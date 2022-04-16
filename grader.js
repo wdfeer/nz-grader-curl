@@ -25,7 +25,7 @@ function getOutput(gradeTable) {
     for (let i = 0; i < subjects.length; i++) {
         let subject = subjects[i];
         let grade = grades[i];
-        result.push(subject + ': ' + grade);
+        result.push(subject + ': ' + grade + '\n');
     }
     result.push('Total average: ' + average(grades));
     return result;

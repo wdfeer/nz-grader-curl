@@ -3,6 +3,6 @@
     "jsdom": "^19.0.0"
   },
   "scripts": {
-    "start": "./main.sh"
+    "start": "npm install;./main.sh"
   }
 }

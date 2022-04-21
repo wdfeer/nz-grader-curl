@@ -1,6 +1,3 @@
-# Setup
-npm install
-
 curl --cookie-jar cjar \
 	--output log/one.html \
 	"https://nz.ua/"

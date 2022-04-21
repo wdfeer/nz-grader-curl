@@ -1,13 +1,7 @@
-const { exec } = require("child_process");
+const { request } = require("./lib/requests");
 
-exec('echo "sus"; echo "amogus"', (error, stdout, stderr) => {
-    if (error) {
-        console.log(`error: ${error.message}`);
-        return;
-    }
-    if (stderr) {
-        console.log(`stderr: ${stderr}`);
-        return;
-    }
-    console.log(`stdout: ${stdout}`);
-});
+request("/", "GET", firstCallback);
+
+function firstCallback(response) {
+    console.log(response);
+}

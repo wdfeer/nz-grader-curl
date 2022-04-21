@@ -1,13 +1,15 @@
 # Setup
-npm i jsdom
+npm install
 
 curl --cookie-jar cjar \
 	--output log/one.html \
 	"https://nz.ua/"
-if [ -s "env/login.txt" ] && [ -s "env/password.txt" ]
-then
+if [ -s "env/login.txt" ] && [ -s "env/password.txt" ]; then
 	login=`cat env/login.txt`
 	password=`cat env/password.txt`
+elif [ $1 ] && [ $2 ]; then
+	login=$1
+	password=$2
 else
 	echo "Enter your nz.ua login:"
 	read login
